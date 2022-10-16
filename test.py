@@ -12,11 +12,7 @@ pcd.scale(1 / np.max(pcd.get_max_bound() - pcd.get_min_bound()),
 pcd.colors = o3d.utility.Vector3dVector(np.random.uniform(0, 1, size=(N, 3)))
 o3d.visualization.draw_geometries([pcd])
 
-voxel_grid = o3d.geometry.VoxelGrid.create_from_point_cloud(pcd,
-                                                            voxel_size=0.05)
-o3d.visualization.draw_geometries([voxel_grid])
-
 print('octree division')
 octree = o3d.geometry.Octree(max_depth=9)
-octree.create_from_voxel_grid(voxel_grid)
+octree.create_from_point_cloud(pcd)
 o3d.visualization.draw_geometries([octree])
