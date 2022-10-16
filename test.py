@@ -1,7 +1,7 @@
 import numpy as np
 import open3d as o3d
 
-N = 500000
+N = 100000
 
 mesh = o3d.io.read_triangle_mesh(r"C:\Users\jayan\Downloads\export.gltf")
 # mesh2 = copy.deepcopy(mesh)
